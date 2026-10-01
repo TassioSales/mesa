@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* A table covered in sticky notes: cream paper, black marker outlines, loud colours. */
+@theme {
+  --font-sans: "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  --color-cream: #fbf6ea;
+  --color-paper: #fffdf7;
+  --color-ink: #1a1a1a;
+  --color-ink-2: #4b4a45;
+  --color-ink-3: #86837a;
+  --color-line: #e6dfcd;
+
+  --color-sun: #ffd166;
+  --color-tomato: #e4572e;
+  --color-leaf: #3a9d6e;
+  --color-sea: #2e86ab;
+
+  --color-note-amber: #ffe08a;
+  --color-note-rose: #ffc4c9;
+  --color-note-sky: #bfe3ff;
+  --color-note-lime: #d2ef9f;
+  --color-note-violet: #ddcdff;
+  --color-note-stone: #ebe8e0;
+
+  --shadow-hard: 3px 3px 0 var(--color-ink);
+  --shadow-hard-sm: 2px 2px 0 var(--color-ink);
+}
+
+html,
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image: radial-gradient(rgb(26 26 26 / 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--color-sun);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cfc6ae transparent;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.96) translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.pop {
+  animation: pop 0.16s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop { animation: none; }
+}
